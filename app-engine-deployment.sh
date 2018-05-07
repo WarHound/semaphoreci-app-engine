@@ -9,6 +9,6 @@ then
   gcloud --quiet components update --version $VERSION
 fi
 
-gcloud auth activate-service-account --key-file=auth_key.json
+gcloud auth activate-service-account --key-file=/home/runner/auth_key.json
 
 gcloud app deploy --quiet

@@ -8,7 +8,7 @@ then
   tar -x -C $SEMAPHORE_CACHE_DIR -f google-cloud-sdk-$VERSION-linux-x86_64.tar.gz
   gcloud --quiet components update --version $VERSION
 fi
-
+gcloud config set project $PROJECT
 gcloud auth activate-service-account --key-file=/home/runner/auth_key.json
 
 gcloud app deploy --quiet

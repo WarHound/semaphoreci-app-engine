@@ -11,4 +11,4 @@ fi
 gcloud auth activate-service-account --key-file=/home/runner/auth_key.json
 gcloud config set project $PROJECT
 
-gcloud app deploy --quiet
+gcloud app deploy --quiet --stop-previous-version

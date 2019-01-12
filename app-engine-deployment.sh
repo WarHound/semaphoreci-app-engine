@@ -11,4 +11,8 @@ fi
 gcloud auth activate-service-account --key-file=/home/runner/auth_key.json
 gcloud config set project $PROJECT
 
-gcloud app deploy --quiet --stop-previous-version
+if [ $ NODE_ENV != 'production' ]
+  gcloud app deploy --quiet --stop-previous-version app-$NODE_ENV.yaml
+else
+  gcloud app deploy --quiet --stop-previous-version
+fi
